@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Code, Palette, Zap } from "lucide-react";
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 const About = () => {
   const highlights = [
@@ -37,9 +38,25 @@ const About = () => {
           </div>
           
           {/* Main Content */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid lg:grid-cols-3 gap-12 items-center mb-16">
+            {/* Profile Photo */}
+            <div className="flex justify-center lg:justify-start animate-scale-in">
+              <div className="relative">
+                <div className="w-80 h-80 rounded-2xl overflow-hidden shadow-army border-4 border-[hsl(var(--army-green))]">
+                  <img 
+                    src={profilePhoto} 
+                    alt="Developer Profile" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                {/* Decorative elements */}
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-army rounded-full"></div>
+                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-[hsl(var(--army-green-light))] rounded-full"></div>
+              </div>
+            </div>
+            
             {/* Text Content */}
-            <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
+            <div className="lg:col-span-2 animate-fade-in" style={{animationDelay: '0.2s'}}>
               <h3 className="text-2xl font-semibold mb-6 text-foreground">
                 Building the Future of Web
               </h3>
@@ -58,32 +75,32 @@ const About = () => {
                 </p>
               </div>
             </div>
-            
-            {/* Stats/Visual Element */}
-            <div className="animate-scale-in" style={{animationDelay: '0.4s'}}>
-              <Card className="bg-gradient-card border-primary/20 shadow-elegant">
-                <CardContent className="p-8">
-                  <div className="grid grid-cols-2 gap-6 text-center">
-                    <div>
-                      <div className="text-3xl font-bold text-primary mb-2">50+</div>
-                      <div className="text-sm text-muted-foreground">Projects Completed</div>
-                    </div>
-                    <div>
-                      <div className="text-3xl font-bold text-accent mb-2">3+</div>
-                      <div className="text-sm text-muted-foreground">Years Experience</div>
-                    </div>
-                    <div>
-                      <div className="text-3xl font-bold text-primary mb-2">15+</div>
-                      <div className="text-sm text-muted-foreground">Technologies</div>
-                    </div>
-                    <div>
-                      <div className="text-3xl font-bold text-accent mb-2">24/7</div>
-                      <div className="text-sm text-muted-foreground">Learning Mode</div>
-                    </div>
+          </div>
+          
+          {/* Stats Section */}
+          <div className="animate-scale-in mb-16" style={{animationDelay: '0.4s'}}>
+            <Card className="bg-gradient-card border-primary/20 shadow-elegant">
+              <CardContent className="p-8">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                  <div>
+                    <div className="text-3xl font-bold text-primary mb-2">50+</div>
+                    <div className="text-sm text-muted-foreground">Projects Completed</div>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
+                  <div>
+                    <div className="text-3xl font-bold text-[hsl(var(--army-green-light))] mb-2">3+</div>
+                    <div className="text-sm text-muted-foreground">Years Experience</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-primary mb-2">15+</div>
+                    <div className="text-sm text-muted-foreground">Technologies</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-[hsl(var(--army-green-light))] mb-2">24/7</div>
+                    <div className="text-sm text-muted-foreground">Learning Mode</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
           
           {/* Highlights */}
@@ -95,7 +112,7 @@ const About = () => {
                 style={{animationDelay: `${0.6 + index * 0.1}s`}}
               >
                 <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <div className={`w-12 h-12 ${index === 1 ? 'bg-gradient-army' : 'bg-gradient-primary'} rounded-lg flex items-center justify-center mx-auto mb-4`}>
                     <highlight.icon className="h-6 w-6 text-primary-foreground" />
                   </div>
                   <h3 className="text-xl font-semibold mb-3 text-foreground">

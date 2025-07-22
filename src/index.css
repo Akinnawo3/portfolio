@@ -31,6 +31,10 @@ All colors MUST be HSL.
     --accent-foreground: 0 0% 98%;
     --accent-glow: 216 100% 75%;
 
+    --army-green: 120 25% 35%;
+    --army-green-light: 120 30% 45%;
+    --army-green-dark: 120 20% 25%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
@@ -42,8 +46,10 @@ All colors MUST be HSL.
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
     --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(240 5% 6%) 100%);
+    --gradient-army: linear-gradient(135deg, hsl(var(--army-green)), hsl(var(--army-green-light)));
     --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
     --shadow-elegant: 0 20px 40px -10px hsl(var(--primary) / 0.4);
+    --shadow-army: 0 10px 30px -10px hsl(var(--army-green) / 0.4);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
@@ -128,12 +134,20 @@ All colors MUST be HSL.
     background: var(--gradient-card);
   }
   
+  .bg-gradient-army {
+    background: var(--gradient-army);
+  }
+  
   .shadow-glow {
     box-shadow: var(--shadow-glow);
   }
   
   .shadow-elegant {
     box-shadow: var(--shadow-elegant);
+  }
+  
+  .shadow-army {
+    box-shadow: var(--shadow-army);
   }
   
   .transition-smooth {
