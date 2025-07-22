@@ -75,7 +75,7 @@ const Projects = () => {
           {projects.filter(p => p.featured).map((project, index) => (
             <Card 
               key={project.title}
-              className="mb-16 bg-gradient-card border-primary/20 shadow-elegant hover:shadow-glow transition-all duration-300 animate-fade-in"
+              className="mb-16 bg-gradient-card border-primary/20 shadow-elegant hover:shadow-glow hover:scale-102 transition-all duration-500 animate-fade-in-right"
               style={{animationDelay: '0.2s'}}
             >
               <CardContent className="p-0">
@@ -85,14 +85,14 @@ const Projects = () => {
                     <img 
                       src={project.image} 
                       alt={project.title}
-                      className="w-full h-full object-cover min-h-[300px] lg:min-h-[400px] hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover min-h-[300px] lg:min-h-[400px] hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-primary/20"></div>
                   </div>
                   
                   {/* Project Details */}
                   <div className="p-8 flex flex-col justify-center">
-                    <Badge className="bg-primary text-primary-foreground w-fit mb-4">
+                    <Badge className="bg-primary text-primary-foreground w-fit mb-4 animate-bounce-slow">
                       Featured Project
                     </Badge>
                     <h3 className="text-3xl font-bold mb-4 text-foreground">
@@ -104,8 +104,13 @@ const Projects = () => {
                     
                     {/* Technologies */}
                     <div className="flex flex-wrap gap-2 mb-6">
-                      {project.technologies.map((tech) => (
-                        <Badge key={tech} variant="outline" className="border-primary/30">
+                      {project.technologies.map((tech, techIndex) => (
+                        <Badge 
+                          key={tech} 
+                          variant="outline" 
+                          className="border-primary/30 hover:scale-105 transition-transform duration-200 animate-fade-in"
+                          style={{animationDelay: `${0.6 + techIndex * 0.1}s`}}
+                        >
                           {tech}
                         </Badge>
                       ))}
@@ -113,11 +118,11 @@ const Projects = () => {
                     
                     {/* Action Buttons */}
                     <div className="flex gap-4">
-                      <Button className="bg-primary hover:bg-primary/90">
+                      <Button className="bg-primary hover:bg-primary/90 hover:scale-105 transition-all duration-300">
                         <ExternalLink className="mr-2 h-4 w-4" />
                         Live Demo
                       </Button>
-                      <Button variant="outline" className="border-primary/30 hover:bg-primary/10">
+                      <Button variant="outline" className="border-primary/30 hover:bg-primary/10 hover:scale-105 transition-all duration-300">
                         <Github className="mr-2 h-4 w-4" />
                         Source Code
                       </Button>
@@ -133,7 +138,7 @@ const Projects = () => {
             {projects.filter(p => !p.featured).map((project, index) => (
               <Card 
                 key={project.title}
-                className="bg-gradient-card border-primary/20 shadow-elegant hover:shadow-glow transition-all duration-300 group animate-fade-in"
+                className="bg-gradient-card border-primary/20 shadow-elegant hover:shadow-glow hover:scale-105 transition-all duration-500 group animate-slide-up"
                 style={{animationDelay: `${0.4 + index * 0.1}s`}}
               >
                 <CardContent className="p-0">
@@ -142,7 +147,7 @@ const Projects = () => {
                     <img 
                       src={project.image} 
                       alt={project.title}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
@@ -158,13 +163,18 @@ const Projects = () => {
                     
                     {/* Technologies */}
                     <div className="flex flex-wrap gap-1 mb-4">
-                      {project.technologies.slice(0, 3).map((tech) => (
-                        <Badge key={tech} variant="outline" className="text-xs border-primary/30">
+                      {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                        <Badge 
+                          key={tech} 
+                          variant="outline" 
+                          className="text-xs border-primary/30 hover:scale-105 transition-transform duration-200 animate-fade-in"
+                          style={{animationDelay: `${0.6 + index * 0.1 + techIndex * 0.05}s`}}
+                        >
                           {tech}
                         </Badge>
                       ))}
                       {project.technologies.length > 3 && (
-                        <Badge variant="outline" className="text-xs border-primary/30">
+                        <Badge variant="outline" className="text-xs border-primary/30 hover:scale-105 transition-transform duration-200">
                           +{project.technologies.length - 3}
                         </Badge>
                       )}
@@ -172,11 +182,11 @@ const Projects = () => {
                     
                     {/* Action Buttons */}
                     <div className="flex gap-2">
-                      <Button size="sm" className="flex-1 bg-primary hover:bg-primary/90">
+                      <Button size="sm" className="flex-1 bg-primary hover:bg-primary/90 hover:scale-105 transition-all duration-300">
                         <ExternalLink className="mr-1 h-3 w-3" />
                         Demo
                       </Button>
-                      <Button size="sm" variant="outline" className="flex-1 border-primary/30 hover:bg-primary/10">
+                      <Button size="sm" variant="outline" className="flex-1 border-primary/30 hover:bg-primary/10 hover:scale-105 transition-all duration-300">
                         <Github className="mr-1 h-3 w-3" />
                         Code
                       </Button>

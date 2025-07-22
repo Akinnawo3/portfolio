@@ -76,12 +76,12 @@ const Skills = () => {
             {skillCategories.map((category, categoryIndex) => (
               <Card 
                 key={category.title}
-                className="bg-gradient-card border-primary/20 shadow-elegant hover:shadow-glow transition-all duration-300 animate-fade-in"
+                className="bg-gradient-card border-primary/20 shadow-elegant hover:shadow-glow hover:scale-105 transition-all duration-500 animate-fade-in-left"
                 style={{animationDelay: `${categoryIndex * 0.2}s`}}
               >
                 <CardContent className="p-6">
                   {/* Category Header */}
-                  <div className={`h-2 w-full bg-gradient-to-r ${category.gradient} rounded-full mb-6`}></div>
+                  <div className={`h-2 w-full bg-gradient-to-r ${category.gradient} rounded-full mb-6 animate-pulse-glow`}></div>
                   <h3 className="text-2xl font-bold mb-6 text-foreground">
                     {category.title}
                   </h3>
@@ -91,13 +91,13 @@ const Skills = () => {
                     {category.skills.map((skill, skillIndex) => (
                       <div 
                         key={skill.name}
-                        className="flex items-center justify-between p-3 rounded-lg bg-background/50 hover:bg-background/70 transition-colors duration-200 animate-scale-in"
+                        className="flex items-center justify-between p-3 rounded-lg bg-background/50 hover:bg-background/70 hover:scale-102 transition-all duration-300 animate-slide-up"
                         style={{animationDelay: `${categoryIndex * 0.2 + skillIndex * 0.05}s`}}
                       >
                         <span className="font-medium text-foreground">
                           {skill.name}
                         </span>
-                        <Badge className={getLevelColor(skill.level)}>
+                        <Badge className={`${getLevelColor(skill.level)} hover:scale-105 transition-transform duration-200`}>
                           {skill.level}
                         </Badge>
                       </div>
@@ -109,8 +109,8 @@ const Skills = () => {
           </div>
 
           {/* Additional Info */}
-          <div className="mt-16 text-center animate-fade-in" style={{animationDelay: '0.8s'}}>
-            <Card className="bg-gradient-primary p-8 text-center">
+          <div className="mt-16 text-center animate-scale-in" style={{animationDelay: '0.8s'}}>
+            <Card className="bg-gradient-primary p-8 text-center hover:scale-105 transition-transform duration-500 animate-glow">
               <h3 className="text-2xl font-bold text-primary-foreground mb-4">
                 Always Learning
               </h3>
