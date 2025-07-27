@@ -1,13 +1,12 @@
-import dever from "@/assets/dever.png";
-import flyer from "@/assets/flyer.png";
-import lagosRide from "@/assets/lagosride.png";
-import toch from "@/assets/toch.png";
-import workergen from "@/assets/workergen.png";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
-
+import workergen from "@/assets/workergen.png";
+import lagosRide from "@/assets/lagosride.png";
+import dever from "@/assets/dever.png";
+import toch from "@/assets/toch.png";
+import flyer from "@/assets/flyer.png";
 type Project = {
   title: string;
   description: string;
@@ -23,7 +22,7 @@ const projects: Project[] = [
     title: "Workergen AI Platform",
     description: "A productivity platform that connects users with autonomous AI agents for content creation, lead generation, and marketing automation.",
     technologies: ["ReactJS", "NodeJS", "MongoDB", "Tailwind CSS"],
-    github: "https://github.com/Akinnawo3",
+    github: "https://github.com/Akinnawo3", // replace with repo if public
     live: "https://app.workergen.com",
     image: workergen,
     featured: true,
@@ -32,26 +31,27 @@ const projects: Project[] = [
     title: "LagosRide Admin Dashboards",
     description: "Dashboards for Nigeria's ride-hailing platform (500 k+ users): trip analytics, driver verification, vehicle-maintenance workflows, more.",
     technologies: ["ReactJS", "NodeJS", "MongoDB", "React Native"],
-    github: "https://github.com/Akinnawo3",
-    live: "https://lrdash.lagosride.com",
+    github: "https://github.com/Akinnawo3", // replace with repo if public
+    live: "https://lrdash.lagosride.com", // may require VPN / auth
     image: lagosRide,
   },
   {
     title: "Dever Logistics",
     description: "A logistics platform that allows users to request delivery services through a seamless web interface, with coordinated handling via integrated communication channels.",
     technologies: ["ReactJS", "Redux", "NodeJS", "MongoDB"],
-    github: "https://github.com/Akinnawo3",
+    github: "https://github.com/Akinnawo3", // update with actual repo if available
     live: "https://www.deverlogistics.com/",
-    image: dever,
+    image: dever, // assuming you've imported the image properly
   },
   {
     title: "Toch",
     description: "A mobility platform introducing eco-friendly electric vehicle rides in Nigeria. Early sign-ups receive exclusive access starting in 2025.",
     technologies: ["ReactJS", "Zustand", "Express", "MongoDB"],
-    github: "https://github.com/Akinnawo3",
+    github: "https://github.com/Akinnawo3", // replace with repo if public
     live: "https://www.tochbyzeno.com/",
     image: toch,
   },
+
   {
     title: "Flyer Ai",
     description: "Responsive portfolio built with React & Tailwind CSS, featuring smooth animations and lightning-fast performance.",
@@ -76,22 +76,13 @@ const Projects = () => {
         {projects
           .filter((p) => p.featured)
           .map((project) => (
-            <Card key={project.title} className="mb-16 bg-gradient-card border-primary/20 shadow-elegant hover:shadow-glow hover:scale-102 transition-all duration-500 animate-fade-in-right overflow-visible" style={{ animationDelay: "0.2s" }}>
+            <Card key={project.title} className="mb-16 bg-gradient-card border-primary/20 shadow-elegant hover:shadow-glow hover:scale-102 transition-all duration-500 animate-fade-in-right" style={{ animationDelay: "0.2s" }}>
               <CardContent className="p-0">
                 <div className="grid lg:grid-cols-2">
                   {/* Image */}
-                  <div className="relative overflow-visible rounded-lg">
-                    <div className="w-full h-full lg:h-auto lg:min-h-[300px] xl:min-h-[400px] rounded-xl  overflow-hidden">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover lg:absolute lg:inset-0 lg:min-w-full lg:min-h-full lg:scale-100 lg:hover:scale-110 transition-transform duration-500"
-                        style={{
-                          minWidth: "100%",
-                          minHeight: "100%",
-                        }}
-                      />
-                    </div>
+                  <div className="relative overflow-hidden rounded-lg overflow-hidden">
+                    <img src={project.image} alt={project.title} className="w-full h-full object-cover  min-h-[300px] lg:min-h-[400px] hover:scale-110 transition-transform duration-500" />
+
                     <div className="absolute inset-0 bg-gradient-primary/20" />
                   </div>
 
@@ -144,7 +135,7 @@ const Projects = () => {
                 <CardContent className="p-0">
                   {/* Image */}
                   <div className="relative overflow-hidden rounded-t-lg">
-                    <img src={project.image} alt={project.title} className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <img src={project.image} alt={project.title} className="w-full h-48 object group-hover:scale-110 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
 
