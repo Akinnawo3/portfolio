@@ -33,7 +33,7 @@ const TopNav: React.FC<ITopNav> = ({ navOpen, setNavOpen }) => {
 
     // Show loading toast
     const loadingToast = toast({
-      title: "Preparing your resume",
+      title: "Preparing Resume",
       description: "Download will start shortly...",
       variant: "default",
     });

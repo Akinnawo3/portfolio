@@ -14,7 +14,7 @@ const Hero = () => {
 
     // Show loading toast
     const loadingToast = toast({
-      title: "Preparing your resume",
+      title: "Preparing Resume",
       description: "Download will start shortly...",
       variant: "default",
     });
@@ -33,7 +33,7 @@ const Hero = () => {
       loadingToast.dismiss();
       toast({
         title: "Download started!",
-        description: "Your resume is being downloaded",
+        description: "Resume is being downloaded",
       });
     } catch (error) {
       // Dismiss loading toast and show error
