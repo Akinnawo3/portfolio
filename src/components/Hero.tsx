@@ -60,7 +60,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-cover bg-center bg-fixed" style={{ backgroundImage: `url(${heroBackground})` }}></div>
 
       {/* Semi-transparent Overlay - Fixed for iOS */}
-      <div className="absolute inset-0 z-0 transform-gpu will-change-transform" style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }} />
+      <div className="absolute inset-0 z-0 transform-gpu will-change-transform" style={{ backgroundColor: "rgba(0, 0, 0, 0)" }} />
 
       {/* Content Container */}
       <div className="container mx-auto px-6 py-20 relative z-10">
