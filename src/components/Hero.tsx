@@ -56,11 +56,13 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroBackground})` }}></div>
+      {/* Fixed Background Image (iOS Compatible) */}
+      <div className="absolute inset-0 overflow-hidden z-0">
+        <img src={heroBackground} alt="Background" className="w-full h-full object-cover fixed top-0 left-0" />
+      </div>
 
-      {/* Semi-transparent Overlay - Fixed for iOS */}
-      <div className="absolute inset-0 z-0 transform-gpu will-change-transform" style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }} />
+      {/* Semi-transparent Overlay (Now Works on iOS) */}
+      <div className="absolute inset-0 bg-black/60 z-0" />
 
       {/* Content Container */}
       <div className="container mx-auto px-6 py-20 relative z-10">
@@ -107,7 +109,7 @@ const Hero = () => {
                 Hi, I'm <span className="text-primary">Victor</span>
               </h1>
               <h2 className="text-2xl sm:text-3xl font-semibold text-white mt-2 drop-shadow">Full Stack Developer</h2>
-              <p className="text-md sm:text-lg text-muted-foreground mt-4 max-w-lg drop-shadow">I build fast, scalable, and user-centric applications using modern web technologies. Passionate about crafting seamless digital experiences.</p>
+              <p className="text-md sm:text-lg text-muted-foreground mt-4 max-w-lg drop-shadow">I build fast, scalable, and user-centric applications using modern web technologies.</p>
 
               {/* Action Buttons */}
               <div className="mt-6 flex gap-4 flex-wrap justify-center md:justify-start">
