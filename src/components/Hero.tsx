@@ -12,7 +12,6 @@ const Hero = () => {
     e.preventDefault();
     setIsDownloading(true);
 
-    // Show loading toast
     const loadingToast = toast({
       title: "Preparing Resume",
       description: "Download will start shortly...",
@@ -20,23 +19,19 @@ const Hero = () => {
     });
 
     try {
-      // Create a hidden anchor element to trigger download
       const link = document.createElement("a");
       link.href = "https://drive.google.com/uc?export=download&id=1bqQ1Kkd-scjOxDXNlpDy1uuIEuLB-Sf7";
       link.setAttribute("download", "Victor_Akinnawo_Resume.pdf");
-      // link.setAttribute("target", "_blank");
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
 
-      // Dismiss loading toast and show success
       loadingToast.dismiss();
       toast({
         title: "Download started!",
         description: "Resume is being downloaded",
       });
     } catch (error) {
-      // Dismiss loading toast and show error
       loadingToast.dismiss();
       toast({
         title: "Download failed",
@@ -64,27 +59,24 @@ const Hero = () => {
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center bg-fixed" style={{ backgroundImage: `url(${heroBackground})` }}></div>
 
-      {/* Semi-transparent Overlay */}
-      <div className="absolute inset-0 bg-black/60 z-0" />
+      {/* Semi-transparent Overlay - Fixed for iOS */}
+      <div className="absolute inset-0 z-0 transform-gpu will-change-transform" style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }} />
 
       {/* Content Container */}
       <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="max-w-6xl mx-auto text-center md:text-left">
           {/* Intro & Image Side-by-Side */}
           <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10 mb-12">
-            {/* Profile Image - Refined border */}
+            {/* Profile Image */}
             <div className="relative w-56 h-56 lg:w-80 lg:h-80 md:w-64 md:h-64 flex-shrink-0 group">
-              {/* Main image with elegant border */}
               <div className="relative z-10 w-full h-full rounded-full overflow-hidden border-[18px] border-white/20 shadow-2xl transition-all duration-700 group-hover:border-primary/50 group-hover:shadow-[0_20px_50px_-10px_rgba(79,70,229,0.3)]">
                 <img src={me} alt="Victor" className="object-cover w-full h-full transition-transform duration-700 ease-out group-hover:scale-105" />
               </div>
 
-              {/* Decorative floating elements */}
+              {/* Decorative elements */}
               <div className="absolute -inset-4 z-0 pointer-events-none overflow-visible">
-                {/* Golden dots circle */}
                 <div className="absolute inset-0 rounded-full border border-dashed border-primary/30 animate-spin-slow [border-width:3px]" />
 
-                {/* Floating diamonds */}
                 {[...Array(8)].map((_, i) => (
                   <div
                     key={i}
@@ -102,14 +94,13 @@ const Hero = () => {
                   />
                 ))}
 
-                {/* Corner accents */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-primary/10 rounded-full group-hover:bg-primary/30 transition-all duration-500" />
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-6 h-6 bg-primary/10 rounded-full group-hover:bg-primary/30 transition-all duration-500" />
               </div>
 
-              {/* Glow effect */}
               <div className="absolute -inset-4 rounded-full bg-primary/5 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
             </div>
+
             {/* Text Section */}
             <div className="">
               <h1 className="text-5xl sm:text-6xl font-extrabold text-white leading-tight drop-shadow-lg">
@@ -144,7 +135,7 @@ const Hero = () => {
                 </a>
               </div>
 
-              {/* Social Icons - Refined hover effects */}
+              {/* Social Icons */}
               <div className="flex justify-center md:justify-start gap-6 my-10 animate-fade-in">
                 <a href="https://github.com/Akinnawo3" target="_blank" rel="noopener noreferrer">
                   <Button variant="ghost" size="sm" className="text-white hover:text-primary hover:bg-transparent hover:scale-110 transition-all">
