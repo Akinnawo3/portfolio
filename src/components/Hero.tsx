@@ -57,7 +57,7 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Image */}
-      {/* <div className="absolute inset-0 bg-cover bg-center bg-fixed" style={{ backgroundImage: `url(${heroBackground})` }}></div> */}
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroBackground})` }}></div>
 
       {/* Semi-transparent Overlay - Fixed for iOS */}
       <div className="absolute inset-0 z-0 transform-gpu will-change-transform" style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }} />
