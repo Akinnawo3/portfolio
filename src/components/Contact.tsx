@@ -146,7 +146,8 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-20 bg-muted/20" id="contact" ref={formRef}>
+    <section className="py-20 bg-background" id="contact" ref={formRef}>
+      {/* <section className="py-20 bg-muted/20" id="contact" ref={formRef}> */}
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
