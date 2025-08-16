@@ -62,8 +62,23 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-cover bg-center bg-fixed" style={{ backgroundImage: `url(${heroBackground})` }}></div>
-
+      <div className="fixed inset-0 -z-10">
+        <img
+          src={heroBackground}
+          alt="Background"
+          className="w-full h-full object-cover"
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            width: "100%",
+            height: "100%",
+            zIndex: -10,
+          }}
+        />
+      </div>
       {/* Semi-transparent Overlay */}
       <div className="absolute inset-0 bg-black/60 z-0" />
 
