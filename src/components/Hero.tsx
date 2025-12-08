@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import heroBackground from "@/assets/hero-bg.jpg";
 import me from "@/assets/me.jpeg";
+import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
+import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
+import { useState } from "react";
 
 const Hero = () => {
   const [isDownloading, setIsDownloading] = useState(false);
@@ -20,7 +20,7 @@ const Hero = () => {
 
     try {
       const link = document.createElement("a");
-      link.href = "https://drive.google.com/uc?export=download&id=1bqQ1Kkd-scjOxDXNlpDy1uuIEuLB-Sf7";
+      link.href = "https://drive.google.com/uc?export=download&id=1JgeWdX35C1B4WmoMPIVVwAGwI5mNf6_x";
       link.setAttribute("download", "Victor_Akinnawo_Resume.pdf");
       document.body.appendChild(link);
       link.click();
