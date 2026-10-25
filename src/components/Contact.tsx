@@ -49,14 +49,14 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      value: "+234 (913) 771 6182",
-      href: "tel:+2349137716182",
+      value: "+44 7774 831595",
+      href: "tel:+447774831595",
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "Lugbe, Federal Capital Territory, Abuja",
-      href: "https://www.google.com/maps/place/Lugbe,+Abuja",
+      value: "Beech Grove, 85 Garstang Road, Preston PR11UT.",
+      href: "https://www.google.com/maps/search/?api=1&query=Beech+Grove,+85+Garstang+Road,+Preston+PR11UT",
     },
   ];
 
@@ -170,7 +170,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground">{info.title}</h4>
-                      <a href={info.href} className="text-muted-foreground hover:text-primary transition-colors duration-300">
+                      <a href={info.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300">
                         {info.value}
                       </a>
                     </div>
