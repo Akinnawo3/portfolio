@@ -28,6 +28,7 @@ const Hero = () => {
       document.body.removeChild(link);
 
       loadingToast.dismiss();
+      
       toast({
         title: "Download started!",
         description: "Resume is being downloaded",
