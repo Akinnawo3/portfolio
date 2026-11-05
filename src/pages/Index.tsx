@@ -19,7 +19,7 @@ const Index = () => {
 
   return (
     <div className="relative min-h-screen">
-      {/* <TopNav navOpen={navOpen} setNavOpen={setNavOpen} /> */}
+      <TopNav navOpen={navOpen} setNavOpen={setNavOpen} />
 
       {/* Backdrop overlay when nav is open */}
       {navOpen && (
