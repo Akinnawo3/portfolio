@@ -40,8 +40,9 @@ const TopNav: React.FC<ITopNav> = ({ navOpen, setNavOpen }) => {
 
     try {
       // Create a hidden anchor element to trigger download
+      const resumeUrl = `https://drive.google.com/uc?export=download&id=14LQk57g7xf9mPapyHrSVQYVViMkS-tI_&cacheBust=${Date.now()}`;
       const link = document.createElement("a");
-      link.href = "https://drive.google.com/uc?export=download&id=1JgeWdX35C1B4WmoMPIVVwAGwI5mNf6_x";
+      link.href = resumeUrl;
       link.setAttribute("download", "Victor_Akinnawo_Resume.pdf");
       // link.setAttribute("target", "_blank");
       document.body.appendChild(link);
